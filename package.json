@@ -8,9 +8,8 @@
   }, 
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start -p $PORT && next server",
-    "server": "node server/index.js",
+    "build": "next build && node server/server.js",
+    "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build"
 
   },
