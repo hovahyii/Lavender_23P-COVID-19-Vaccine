@@ -3,7 +3,7 @@ module.exports = {
         APP_NAME: 'VACCINE',
         API_DEVELOPMENT: 'http://localhost:8000/api',
         API_PRODUCTION: 'http://www.lavender23p-covid-19-vaccine.gq/api',
-        PRODUCTION: false,
+        PRODUCTION: true,
         DOMAIN_DEVELOPMENT: 'http://localhost:3000',
         DOMAIN_PRODUCTION: 'http://www.lavender23p-covid-19-vaccine.gq/',
         DISQUS_SHORTNAME: 'covid-19-vaccine',
