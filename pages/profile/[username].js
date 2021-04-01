@@ -103,7 +103,7 @@ const UserProfile = ({ user, blogs, query }) => {
     );
 };
 
-.getInitialProps = ({ query }) => {
+UserProfile.getInitialProps = ({ query }) => {
     // console.log(query);
     return userPublicProfile(query.username).then(data => {
         if (data.error) {
