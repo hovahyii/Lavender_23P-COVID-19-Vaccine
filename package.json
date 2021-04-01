@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT && node server/server.js"
+    "start": "next start -p $PORT && next server",
+    "server": "node server/index.js",
+    "heroku-postbuild": "npm run build"
+
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
