@@ -11,7 +11,7 @@ import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../config';
 const Index = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, router }) => {
     const head = () => (
         <Head>
-            <title>Programming blogs | {APP_NAME}</title>
+            <title>COVID-19 Vaccine Blog | {APP_NAME}</title>
             <meta
                 name="description"
                 content="This blog discuss and share latest information and idea about COVID-19 Vaccine"
