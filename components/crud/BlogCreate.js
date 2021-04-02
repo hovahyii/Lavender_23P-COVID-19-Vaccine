@@ -89,9 +89,9 @@ const CreateBlog = ({ router }) => {
         // console.log(e.target.value);
         const value = name === 'photo' ? e.target.files[0] : e.target.value;
         formData.set(name, value);
-        value = document.getElementById('output');
-        image.src = URL.createObjectURL(event.target.files[0]);
         setValues({ ...values, [name]: value, formData, error: '' });
+        image = document.getElementById('output');
+        image.src = URL.createObjectURL(e.target.files[0])
     };
 
     const handleBody = e => {
@@ -218,12 +218,8 @@ const CreateBlog = ({ router }) => {
                          
                             <small className="text-muted">Max size: 1mb</small> 
                           
-                            
                             <br />
-
-                            Upload featured image
-                            <br />
-                         <input onChange={handleChange('photo')}  accept=".jpg, .png, .jpeg" type="file" accept="image/*"  />
+                         <input onChange={handleChange('photo')}  accept=".jpg, .png, .jpeg" type="file" accept="image/*" hidden />
                          <p><img id="output" width="200" /></p>
 
                             
