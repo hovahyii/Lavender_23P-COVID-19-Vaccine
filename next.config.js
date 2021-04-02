@@ -2,7 +2,7 @@ module.exports = {
     publicRuntimeConfig:{
         APP_NAME: 'VACCINE',
         API_DEVELOPMENT: 'http://localhost:8000/api',
-        API_PRODUCTION: 'https://covid-19-vaccine-api.herokuapp.com/api',
+        API_PRODUCTION: 'https://lavender23p-covid-19-vaccine.herokuapp.com/api',
         PRODUCTION: true,
         DOMAIN_DEVELOPMENT: 'http://localhost:3000',
         DOMAIN_PRODUCTION: 'https://lavender23p-covid-19-vaccine.herokuapp.com',
