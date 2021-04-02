@@ -219,7 +219,7 @@ const CreateBlog = ({ router }) => {
                             <small className="text-muted">Max size: 1mb</small> 
                           
                             <br />
-                         <input onChange={handleChange('photo')}  accept=".jpg, .png, .jpeg" type="file" accept="image/*" hidden />
+                         <input onChange={handleChange('photo')}  accept=".jpg, .png, .jpeg" type="file" accept="image/*" />
                          <p><img id="output" width="200" /></p>
 
                             
