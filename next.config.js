@@ -14,7 +14,7 @@ module.exports = {
         return [
           {
             source: '/api/:path*',
-            destination: 'https://lavender23p-covid-19-vaccine.herokuapp.com/api/:path*',
+            destination: 'https://covid-19-vaccine-api.herokuapp.com/api/:path*',
           },
         ]
       },
