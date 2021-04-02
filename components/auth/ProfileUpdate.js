@@ -48,6 +48,8 @@ const ProfileUpdate = () => {
         let userFormData = new FormData();
         userFormData.set(name, value);
         setValues({ ...values, [name]: value, userData: userFormData, error: false, success: false });
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(e.target.files[0])
     };
 
     const handleSubmit = e => {
@@ -76,10 +78,16 @@ const ProfileUpdate = () => {
     const profileUpdateForm = () => (
         <form onSubmit={handleSubmit}>
             <div className="form-group">
+                 <h5>Profile Picture</h5>
+               <hr />
+
                 <label className="btn btn-outline-info">
-                    Profile photo
+                    Upload Here
                     <input onChange={handleChange('photo')} type="file" accept="image/*" hidden />
                 </label>
+                <br />
+                <small className="text-muted">Max size: 1MB</small> 
+                <p><img id="output" width="100" height="100" /></p>
             </div>
             <div className="form-group">
                 <label className="text-muted">Username</label>
