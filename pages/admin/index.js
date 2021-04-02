@@ -1,6 +1,7 @@
 import Layout from '../../components/Layout';
 import Admin from '../../components/auth/Admin';
 import Link from 'next/link';
+import { isAuth } from '../../actions/auth';
 
 const AdminIndex = () => {
     return (
@@ -35,14 +36,26 @@ const AdminIndex = () => {
                                     </Link>
                                 </li>
 
-                                <li className="list-group-item">
-                                    <Link href="/user/update">
-                                        <a>Update Profile</a>
-                                    </Link>
-                                </li>
+                      
                             </ul>
                         </div>
-                        <div className="col-md-8">Welcome to Admin Dashboard</div>
+                        <div className="col-md-8">
+                            <h2 >Welcome to Admin Dashboard</h2>
+                       
+                            {isAuth() && isAuth().role === 0 && (
+                                <h3>  
+                               {`${isAuth().name}`}
+                                </h3>  
+                            )}
+
+                            { isAuth() && isAuth().role === 1 && (
+                                <h3>  
+                               {`${isAuth().name}`}
+                                </h3>
+                            )}
+
+                    
+                        </div>
                     </div>
                 </div>
             </Admin>

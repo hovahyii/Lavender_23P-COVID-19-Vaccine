@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Router from 'next/router';
 import NProgress from 'nprogress';
-import { APP_NAME } from '../config';
 import { signout, isAuth } from '../actions/auth';
 import Image from 'next/image';
 import {
@@ -13,6 +12,7 @@ import {
   Nav,
   NavItem,
   NavLink,
+  NavDropdown,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -39,13 +39,14 @@ const Header = () => {
         <NavLink>
         <Image
         src="/logo-white-bg.png"
-        alt="Lavender 23_P COVID-19 Vaciine Logo"
+        alt="Lavender 23_P COVID-19 Vaccine Logo"
         width={150}
         height={150}
       /></NavLink>
       </Link>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
+
         <Nav className="ml-auto" navbar>
           <React.Fragment>
             <NavItem>
@@ -60,6 +61,12 @@ const Header = () => {
               </Link>
             </NavItem>
           </React.Fragment>
+
+          <NavItem>
+            <a href="/user/crud/blog" className="btn btn-primary text-light">
+              Write a blog
+            </a>
+          </NavItem>
 
           {!isAuth() && (
             <React.Fragment>
@@ -76,35 +83,76 @@ const Header = () => {
             </React.Fragment>
           )}
 
-          {isAuth() && isAuth().role === 0 && (
-            <NavItem>
-              <Link href="/user">
-                <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
-              </Link>
-            </NavItem>
-          )}
+    
 
-          {isAuth() && isAuth().role === 1 && (
-            <NavItem>
-              <Link href="/admin">
-                <NavLink>{`${isAuth().name}'s Dashboard`}</NavLink>
-              </Link>
-            </NavItem>
-          )}
+          <UncontrolledDropdown nav inNavbar>
+            
+              {isAuth() && isAuth().role === 0 && (
+                <DropdownToggle nav caret>
+                🧑 ‍{`${isAuth().username}`}
+                </DropdownToggle>
+              )}
 
-          {isAuth() && (
-            <NavItem>
-              <NavLink style={{ cursor: 'pointer' }} onClick={() => signout(() => Router.replace(`/signin`))}>
-                Signout
-              </NavLink>
-            </NavItem>
-          )}
+              { isAuth() && isAuth().role === 1 && (
+                <DropdownToggle nav caret>
+                🧑 {`${isAuth().username}`}
+                </DropdownToggle>
+              )}
 
-          <NavItem>
-            <a href="/user/crud/blog" className="btn btn-primary text-light">
-              Write a blog
-            </a>
-          </NavItem>
+              <DropdownMenu right>
+                <DropdownItem>
+
+                {isAuth() && isAuth().role === 0 && (
+                  <NavItem>
+                    <Link href="/user">
+                      <NavLink>Dashboard</NavLink>
+                    </Link>
+                  </NavItem>
+                )}
+
+                {isAuth() && isAuth().role === 1 && (
+                  <NavItem>
+                    <Link href="/admin">
+                      <NavLink>Dashboard</NavLink>
+                    </Link>
+                  </NavItem>
+                )}                
+              </DropdownItem>
+
+              <DropdownItem>
+
+            {isAuth() && isAuth().role === 0 && (
+              <NavItem>
+                <Link href="/user/update">
+                  <NavLink>Profile</NavLink>
+                </Link>
+              </NavItem>
+            )}
+
+            {isAuth() && isAuth().role === 1 && (
+              <NavItem>
+                <Link href="/user/update">
+                  <NavLink>Profile</NavLink>
+                </Link>
+              </NavItem>
+            )}                
+          </DropdownItem>
+            
+                <DropdownItem divider />
+                <DropdownItem>
+                {isAuth() && (
+                  <NavItem>
+                    <NavLink style={{ cursor: 'pointer' }} onClick={() => signout(() => Router.replace(`/signin`))}>
+                      Signout
+                    </NavLink>
+                  </NavItem>
+                )}
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+     
+
+  
         </Nav>
       </Collapse>
     </Navbar>
