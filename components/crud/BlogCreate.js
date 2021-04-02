@@ -220,6 +220,7 @@ const CreateBlog = ({ router }) => {
                           
                             <br />
                          <input onChange={handleChange('photo')} type="file" accept="image/*" />
+                         <br />
                          <p><img id="output" width="200" height="200" /></p>
 
                             
