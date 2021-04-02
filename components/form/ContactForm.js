@@ -29,7 +29,8 @@ const ContactForm = ({ authorEmail }) => {
                     email: '',
                     message: '',
                     buttonText: 'Sent',
-                    success: data.success
+                    success: data.success,
+                  
                 });
             }
         });
@@ -79,7 +80,7 @@ const ContactForm = ({ authorEmail }) => {
                 </div>
 
                 <div>
-                    <button className="btn btn-primary">{buttonText}</button>
+                    <button className="btn btn-primary" url="/simple-cors" method="POST">{buttonText}</button>
                 </div>
             </form>
         );

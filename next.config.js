@@ -1,6 +1,6 @@
 module.exports = {
     publicRuntimeConfig:{
-        APP_NAME: 'VACCINE',
+        APP_NAME: 'Lavender_23P COVID-19 Vaccine',
         API_DEVELOPMENT: 'http://localhost:8000/api',
         API_PRODUCTION: 'https://covid-19-vaccine-api.herokuapp.com/api',
         PRODUCTION: true,
@@ -23,5 +23,13 @@ module.exports = {
             ]
           }
         ]
-      }
+      },
+      async rewrites() {
+        return [
+          {
+            source: '/api/:path*',
+            destination: 'https://lavender23p-covid-19-vaccine.herokuapp.com/:path*',
+          },
+        ]
+      },
 }
