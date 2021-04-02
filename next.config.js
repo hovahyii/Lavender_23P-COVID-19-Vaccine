@@ -13,8 +13,8 @@ module.exports = {
     async rewrites() {
         return [
           {
-            source: 'https://covid-19-vaccine-api.herokuapp.com/api/:path*',
-            destination: 'https://lavender23p-covid-19-vaccine.herokuapp.com/:path*',
+            source: '/api/:path*',
+            destination: 'https://covid-19-vaccine-api.herokuapp.com/api/:path*',
           },
         ]
       },
