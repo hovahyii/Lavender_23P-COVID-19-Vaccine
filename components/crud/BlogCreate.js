@@ -217,10 +217,11 @@ const CreateBlog = ({ router }) => {
                           
                             
                             <br />
-                            <label className="btn btn-outline-info">
-                                Upload featured image
-                                <input onChange={handleChange('photo')}  accept=".jpg, .png, .jpeg" type="file" accept="image/*"  />
-                            </label>
+
+                            Upload featured image
+                            <br />
+                         <input onChange={handleChange('photo')}  accept=".jpg, .png, .jpeg" type="file" accept="image/*"  />
+                            
                         </div>
                     </div>
                     <div>
