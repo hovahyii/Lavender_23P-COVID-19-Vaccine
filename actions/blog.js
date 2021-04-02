@@ -16,7 +16,7 @@ export const createBlog = (blog, token) => {
         method: 'POST',
         headers: {
             Accept: 'application/json',
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
         },
         body: blog
     })
@@ -36,7 +36,7 @@ export const listBlogsWithCategoriesAndTags = (skip, limit) => {
         method: 'POST',
         headers: {
             Accept: 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(data)
     })

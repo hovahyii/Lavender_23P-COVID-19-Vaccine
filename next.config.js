@@ -9,5 +9,13 @@ module.exports = {
         DISQUS_SHORTNAME: 'covid-19-vaccine',
         GOOGLE_CLIENT_ID: '320727890298-nnluf7g2ph6skc03ea443r6757fd3437.apps.googleusercontent.com',
         GOOGLE_CLIENT_KEY: 'JOojitgQkovTzk8hyBGs2n0W'
-    }
+    },
+    async rewrites() {
+        return [
+          {
+            source: '/api/:path*',
+            destination: 'https://covid-19-vaccine-api.herokuapp.com/api/:path*',
+          },
+        ]
+      },
 }
