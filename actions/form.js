@@ -14,8 +14,10 @@ export const emailContactForm = data => {
         method: 'POST',
         mode: 'cors',
         headers: {
+            'Access-Control-Allow-Origin':'*',
             Accept: 'application/json',
             'Content-Type': 'application/json'
+            
         },
         body: JSON.stringify(data)
     })
