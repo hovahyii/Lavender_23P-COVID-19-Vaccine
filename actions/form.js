@@ -12,6 +12,7 @@ export const emailContactForm = data => {
 
     return fetch(`${emailEndpoint}`, {
         method: 'POST',
+        mode: 'cors',
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'

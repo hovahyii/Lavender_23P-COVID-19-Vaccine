@@ -4,6 +4,7 @@ import { emailContactForm } from '../../actions/form';
 import NextCors from 'nextjs-cors';
 
 const ContactForm = ({ authorEmail }) => {
+    
     const [values, setValues] = useState({
         message: '',
         name: '',

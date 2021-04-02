@@ -99,7 +99,7 @@ const ProfileUpdate = () => {
             </div>
             <div className="form-group">
                 <label className="text-muted">Email</label>
-                <input onChange={handleChange('email')} type="text" value={email} className="form-control" />
+                <input onChange={handleChange('email')} type="text" value={email} className="form-control" disabled />
             </div>
             <div className="form-group">
                 <label className="text-muted">About</label>
