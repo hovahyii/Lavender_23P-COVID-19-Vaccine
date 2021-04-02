@@ -83,7 +83,7 @@ const ContactForm = ({ authorEmail }) => {
                 </div>
 
                 <div>
-                    <button className="btn btn-primary" url="/simple-cors" method="POST">{buttonText}</button>
+                    <button className="btn btn-primary">{buttonText}</button>
                 </div>
             </form>
         );
