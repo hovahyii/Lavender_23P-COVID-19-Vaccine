@@ -211,13 +211,15 @@ const CreateBlog = ({ router }) => {
                         <div className="form-group pb-2">
                             <h5>Featured image</h5>
                             <hr />
-                            <img src={photo} alt={title} style={{ width: '50%' }} />
+                           
+                                <img class="img-fluid img-thumbnail" src={photo.url} alt="" />
+                        
                             <br />
                             <small className="text-muted">Max size: 1mb</small> 
                             <br />
                             <label className="btn btn-outline-info">
                                 Upload featured image
-                                <input onChange={handleChange('photo')} type="file" accept="image/*" hidden />
+                                <input onChange={handleChange('photo')}  accept=".jpg, .png, .jpeg" type="file" accept="image/*" hidden />
                             </label>
                         </div>
                     </div>
