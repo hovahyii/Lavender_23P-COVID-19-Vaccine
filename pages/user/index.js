@@ -27,7 +27,7 @@ const UserIndex = () => {
                         </ul>
                     </div>
                         <div className="col-md-8">
-                            <h2 >Welcome to Admin Dashboard</h2>
+                            <h2 >Welcome to Dashboard</h2>
                        
                             {isAuth() && isAuth().role === 0 && (
                                 <h3>  
