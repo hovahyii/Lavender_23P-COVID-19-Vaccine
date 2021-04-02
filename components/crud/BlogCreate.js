@@ -211,7 +211,8 @@ const CreateBlog = ({ router }) => {
                         <div className="form-group pb-2">
                             <h5>Featured image</h5>
                             <hr />
-
+                            <img src={data.photo} alt={title} style={{ width: '50%' }} />
+                            <br />
                             <small className="text-muted">Max size: 1mb</small> 
                             <br />
                             <label className="btn btn-outline-info">

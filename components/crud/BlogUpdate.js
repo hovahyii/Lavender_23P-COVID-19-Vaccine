@@ -266,9 +266,11 @@ const BlogUpdate = ({ router }) => {
 
                          
                             <img src={`${API}/blog/photo/${router.query.slug}`} alt={title} style={{ width: '50%' }} />
-                            
+
+                            <br />
 
                             <small className="text-muted">Max size: 1mb</small>
+                            
                             <br />
                             <label className="btn btn-outline-info">
                                 Upload featured image
