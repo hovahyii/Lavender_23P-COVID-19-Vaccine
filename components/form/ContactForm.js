@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { emailContactForm } from '../../actions/form';
+import NextCors from 'nextjs-cors';
 
 const ContactForm = ({ authorEmail }) => {
     const [values, setValues] = useState({
@@ -16,6 +17,8 @@ const ContactForm = ({ authorEmail }) => {
     const { message, name, email, sent, buttonText, success, error } = values;
 
     const clickSubmit = e => {
+
+       
         e.preventDefault();
         setValues({ ...values, buttonText: 'Sending...' });
         emailContactForm({ authorEmail, name, email, message }).then(data => {
@@ -91,11 +94,8 @@ const ContactForm = ({ authorEmail }) => {
 
             {showSuccessMessage()}
             {showErrorMessage()}
-            <pre>
-                {method} {baseUrl}
-                {url}
-            </pre>
             {contactForm()}
+
         </React.Fragment>
     );
 };
