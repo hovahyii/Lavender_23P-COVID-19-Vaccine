@@ -255,9 +255,7 @@ const BlogUpdate = ({ router }) => {
                         {showError()}
                     </div>
 
-                    {body && (
-                        <img src={`${API}/blog/photo/${router.query.slug}`} alt={title} style={{ width: '100%' }} />
-                    )}
+                
                 </div>
 
                 <div className="col-md-4">
@@ -265,6 +263,10 @@ const BlogUpdate = ({ router }) => {
                         <div className="form-group pb-2">
                             <h5>Featured image</h5>
                             <hr />
+
+                         
+                            <img src={`${API}/blog/photo/${router.query.slug}`} alt={title} style={{ width: '50%' }} />
+                            
 
                             <small className="text-muted">Max size: 1mb</small>
                             <br />
