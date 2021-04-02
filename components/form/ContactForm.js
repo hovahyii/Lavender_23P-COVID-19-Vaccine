@@ -88,8 +88,13 @@ const ContactForm = ({ authorEmail }) => {
 
     return (
         <React.Fragment>
+
             {showSuccessMessage()}
             {showErrorMessage()}
+            <pre>
+                {method} {baseUrl}
+                {url}
+            </pre>
             {contactForm()}
         </React.Fragment>
     );
