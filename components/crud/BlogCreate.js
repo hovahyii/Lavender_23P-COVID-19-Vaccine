@@ -12,6 +12,7 @@ import '../../node_modules/react-quill/dist/quill.snow.css';
 import { QuillModules, QuillFormats } from '../../helpers/quill';
 
 const CreateBlog = ({ router }) => {
+
     const blogFromLS = () => {
         if (typeof window === 'undefined') {
             return false;
@@ -88,6 +89,8 @@ const CreateBlog = ({ router }) => {
         // console.log(e.target.value);
         const value = name === 'photo' ? e.target.files[0] : e.target.value;
         formData.set(name, value);
+        value = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
         setValues({ ...values, [name]: value, formData, error: '' });
     };
 
@@ -221,6 +224,8 @@ const CreateBlog = ({ router }) => {
                             Upload featured image
                             <br />
                          <input onChange={handleChange('photo')}  accept=".jpg, .png, .jpeg" type="file" accept="image/*"  />
+                         <p><img id="output" width="200" /></p>
+
                             
                         </div>
                     </div>
