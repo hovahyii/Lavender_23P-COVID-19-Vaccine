@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import { API } from '../config';
 
-export const emailContactForm = data => {
+export const emailContactForm = (data) => {
     let emailEndpoint;
 
     if (data.authorEmail) {
@@ -12,9 +12,7 @@ export const emailContactForm = data => {
 
     return fetch(`${emailEndpoint}`, {
         method: 'POST',
-        mode: 'cors',
         headers: {
-            'Access-Control-Allow-Origin':'*',
             Accept: 'application/json',
             'Content-Type': 'application/json'
             

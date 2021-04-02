@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { emailContactForm } from '../../actions/form';
-import NextCors from 'nextjs-cors';
 
 const ContactForm = ({ authorEmail }) => {
-    
+
     const [values, setValues] = useState({
         message: '',
         name: '',
@@ -19,7 +18,6 @@ const ContactForm = ({ authorEmail }) => {
 
     const clickSubmit = e => {
 
-       
         e.preventDefault();
         setValues({ ...values, buttonText: 'Sending...' });
         emailContactForm({ authorEmail, name, email, message }).then(data => {
@@ -69,7 +67,11 @@ const ContactForm = ({ authorEmail }) => {
 
                 <div className="form-group">
                     <label className="lead">Name</label>
-                    <input type="text" onChange={handleChange('name')} className="form-control" value={name} required />
+                    <input type="text" 
+                    onChange={handleChange('name')} 
+                    className="form-control" 
+                    value={name} 
+                    required />
                 </div>
 
                 <div className="form-group">
