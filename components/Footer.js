@@ -42,7 +42,7 @@ const SimpleFooter = () => {
               </Col>
               <Col className="text-lg-center btn-wrapper" lg="6">
               <a target="_blank" rel="noopener noreferrer" href="https://www.buymeacoffee.com/hovahyii">
-                  <img src="https://github.com/appcraftstudio/buymeacoffee/raw/master/Images/snapshot-bmc-button.png" width="100vw"  />
+                  <img src="https://github.com/appcraftstudio/buymeacoffee/raw/master/Images/snapshot-bmc-button.png" width="100%"  />
               </a>
               </Col>
             </Row>
