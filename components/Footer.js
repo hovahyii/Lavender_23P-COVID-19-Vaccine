@@ -52,7 +52,7 @@ const SimpleFooter = () => {
                 <div className=" copyright">
                   © {new Date().getFullYear()}{" "}
                   <a
-                    href={`${DOMAIN}`}
+                    href={`${DOMAIN}/about-us.html`}
                     target="_blank"
                   >
                     Lavender_23P
