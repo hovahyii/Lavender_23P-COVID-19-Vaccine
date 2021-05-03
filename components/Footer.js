@@ -65,8 +65,7 @@ const SimpleFooter = () => {
                
                   <NavItem>
                     <NavLink
-                      href="#"
-                      target="_blank"
+                      href={`${DOMAIN}/team.html`}
                     >
                       About Us
                     </NavLink>
