@@ -117,7 +117,7 @@ const Index = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, rout
 
 Index.getInitialProps = () => {
     let skip = 0;
-    let limit = 4;
+    let limit = 6;
     return listBlogsWithCategoriesAndTags(skip, limit).then(data => {
         if (data.error) {
             console.log(data.error);
