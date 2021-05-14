@@ -83,7 +83,7 @@ const SingleBlog = ({ blog, query }) => {
             {head()}
             <Layout>
                 <main>
-                    <article>
+                    <article width="100vw">
                         <div className="container-fluid">
                             <section>
                                 <div className="row" style={{ marginTop: '-30px' }}>
@@ -116,7 +116,7 @@ const SingleBlog = ({ blog, query }) => {
                             </section>
                         </div>
 
-                        <div className="container">
+                        <div className="container" >
                             <section>
                                 <div className="col-md-12 lead">{renderHTML(blog.body)}</div>
                             </section>
