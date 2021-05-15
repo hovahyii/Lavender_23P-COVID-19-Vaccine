@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Layout from '../../components/Layout';
 import React, { useState, useEffect } from 'react';
 import { singleBlog, listRelated } from '../../actions/blog';
-import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
+import { API, DOMAIN, APP_NAME } from '../../config';
 import renderHTML from 'react-render-html';
 import moment from 'moment';
 import SmallCard from '../../components/blog/SmallCard';
@@ -12,7 +12,7 @@ import DisqusThread from '../../components/DisqusThread';
 
 const SingleBlog = ({ blog, query }) => {
     const [related, setRelated] = useState([]);
-
+ 
     const loadRelated = () => {
         listRelated({ blog }).then(data => {
             if (data.error) {

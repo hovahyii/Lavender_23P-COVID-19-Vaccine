@@ -47,7 +47,7 @@ const Category = ({ category, blogs, query }) => {
                         </header>
                     </div>
                 </main>
-            </Layout>
+            </Layout> 
         </React.Fragment>
     );
 };
